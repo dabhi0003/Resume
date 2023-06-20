@@ -99,7 +99,7 @@ class TemplateView2(View):
 
 class TemplateView3(View):
     def get(self,request):
-        details=Resume.objects.latest()
+        details=Resume.objects.latest("id")
         return render(request,"template3.html",{"details":[details]})
 
 
