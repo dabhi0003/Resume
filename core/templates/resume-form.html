@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Form</title>
+ 
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            margin: 0;
+            padding: 0;
+        }
+
+        h1, h4 {
+            text-align: center;
+        }
+
+        form {
+            max-width: 400px;
+            margin: 50px auto;
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        label {
+            font-weight: bold;
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        .required {
+            color: red;
+        }
+
+        input[type="text"],
+        input[type="email"] {
+            width: 95%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+        }
+
+        #submit{
+    
+            padding: 10px 15px;
+            background-color: #4caf50;
+            color: #ffffff;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+        #prv{
+    
+            padding: 10px 15px;
+            background-color: #4caf50;
+            color: 	#0000ff;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+    </style>
+    <script src="{% static 'jquery.js' %}"></script>
+    
+</head>
+<body>
+    <h1>Resume Builder</h1>
+    <form action="" method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <div id="div1">
+                <div id="userdiv"><label for="user">User<span class="required">*</span>:</label>
+                <input type="text" name="user" id="user"  ></div>
+                <label for="first_name">First Name<span class="required">*</span>:</label>
+                <input type="text" name="first_name" id="first_name" required>
+                <label for="last_name">Last Name<span class="required">*</span>:</label>
+                <input type="text" name="last_name" id="last_name" required>
+                <label for="contact_number">Contact Number<span class="required">*</span>:</label>
+                <input type="text" name="contact_number" id="contact_number" required>
+                <label for="email">Email<span class="required">*</span>:</label>
+                <input type="email" name="email" id="email" required>
+                <label for="address">Address<span class="required">*</span>:</label>
+                <input type="text" name="address" id="address" required>
+                <label for="github_link">GitHub Link:</label>
+                <input type="text" name="github_link" id="github_link">
+                <label for="linkedin_link">LinkedIn Link:</label>
+                <input type="text" name="linkedin_link" id="linkedin_link">
+                <label for="image">Image:</label>
+                <input type="file" name="image" id="image">
+                <label for="professional_summary">Professional Summary<span class="required">*</span>:</label>
+                <input type="text" name="professional_summary" id="professional_summary" required>
+                <br><br><a id="submit" class="next1">Next </a><br><br>
+        </div>
+        <div id="div2">
+            <center><h2>Education</h2></center>
+            <label for="degree">Degree<span class="required">*</span>:</label>
+            <input type="text" name="degree" id="degree" required>
+            <label for="institution">Institute<span class="required">*</span>:</label>
+            <input type="text" name="institution" id="institution" required>
+            <label for="address">Address<span class="required">*</span>:</label>
+            <input type="text" name="int_address" id="address" required>
+            <label for="year">Year<span class="required">*</span>:</label>
+            <input type="text" name="year" id="year" required>
+            <label for="courses">Course<span class="required">*</span>:</label>
+            <input type="text" name="courses" id="courses">
+            <div class="btn-container">
+                <br><a id="submit" class="prv prv1">Previous </a>&nbsp;&nbsp;
+                <a id="submit" class="next2">Next </a><br><br><br>
+            </div>
+        </div>
+        <div id="div3">
+                <center><h2>Experience</h2></center>
+                <label for="job_title">Job Title:</label>
+                <input type="text" name="job_title" id="job_title">
+                <label for="company">Company:</label>
+                <input type="text" name="company" id="company">
+                <label for="location">Location:</label>
+                <input type="text" name="location" id="location">
+                <label for="start_date">Start Date:</label>
+                <input style="width:100%; height:40px;" type="date" name="start_date" id="start_date">
+                <br><br><label for="end_date">End Date:</label>
+                <input style="width:100%; height:40px;" type="date" name="end_date" id="end_date">
+                <br><br><label for="description">Description:</label>
+                <input type="text" name="description" id="description">
+                <div>
+                    <br><a id="submit" class="prv prv2">Previous </a>&nbsp;&nbsp;
+                    <a id="submit" class="next3">Next </a><br><br><br>
+                </div>
+
+        </div>
+        <div id="div4">
+            <center><h2>Skill</h2></center>
+            <label for="name">Skill<span class="required">*</span>:</label>
+            <input type="text" name="name" id="name" required>
+            <div class="btn-container">
+                <br><a id="submit" class="prv prv3">Previous </a>&nbsp;&nbsp;
+                <a id="submit" class="next4">Next </a><br><br><br>
+            </div>
+        </div>
+        <div id="div5">
+            <center><h2>Project</h2></center>
+        <label for="title">Title:</label>
+        <input type="text" name="title" id="title">
+        <label for="project_description">Description:</label>
+        <input type="text" name="project_description" id="project_description">
+        <label for="technologies">Technologies:</label>
+        <input type="text" name="technologies" id="technologies">
+        <div>
+            <a id="submit" class="prv prv4">Previous </a>&nbsp;&nbsp;
+            <input id="submit"type="submit" value="Save">
+        </div>
+
+        </div>
+    </form>
+    <script type="text/javascript">
+        $(document).ready(function(){
+            $("#userdiv").hide();
+            $("#div2").hide();
+            $("#div3").hide();
+            $("#div4").hide();
+            $("#div5").hide();
+            $(".next1").on("click",function(){
+                $("#div1").hide();
+                $("#div2").show();
+
+            });
+            $(".next2").on("click",function(){
+                $("#div1").hide();
+                $("#div2").hide();
+                $("#div3").show();
+                
+            });
+            $(".next3").on("click",function(){
+                $("#div1").hide();
+                $("#div2").hide();
+                $("#div3").hide();
+                $("#div4").show();
+            });
+            
+            $(".next4").on("click",function(){
+                $("#div1").hide();
+                $("#div2").hide();
+                $("#div3").hide();
+                $("#div4").hide();
+                $("#div5").show();
+            });
+            $(".prv1").on("click",function(){
+                $("#div1").show();
+                $("#div2").hide();
+                $("#div3").hide();
+                $("#div4").hide();
+                $("#div5").hide();
+            });
+            $(".prv2").on("click",function(){
+                $("#div1").hide();
+                $("#div2").show();
+                $("#div3").hide();
+                $("#div4").hide();
+                $("#div5").hide();
+            });
+            $(".prv3").on("click",function(){
+                $("#div1").hide();
+                $("#div2").hide();
+                $("#div3").show();
+                $("#div4").hide();
+                $("#div5").hide();
+            });
+            $(".prv4").on("click",function(){
+                $("#div1").hide();
+                $("#div2").hide();
+                $("#div3").hide();
+                $("#div4").show();
+                $("#div5").hide();
+            });
+        });
+    </script>
+  
+    
+</body>
+</html>
