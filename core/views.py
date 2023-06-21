@@ -102,9 +102,16 @@ class TemplateView3(View):
         details=Resume.objects.latest("id")
         return render(request,"template3.html",{"details":[details]})
 
+class TemplateView4(View):
+    def get(self,request):
+        details=Resume.objects.latest("id")
+        return render(request,"template4.html",{"details":[details]})
+
+class TemplateView5(View):
+    def get(self,request):
+        details=Resume.objects.latest("id")
+        return render(request,"template5.html",{"details":[details]})
 
 class AllTemplate(View):
     def get(self,request):
         return render(request,"all_templates.html")
-    
-

@@ -11,6 +11,8 @@ urlpatterns = [
     path("template1/",TemplateView.as_view(),name="template1"),
     path("template2/",TemplateView2.as_view(),name="template2"),
     path("template3/",TemplateView3.as_view(),name="template3"),
+    path("template4/",TemplateView4.as_view(),name="template4"),
+    path("template5/",TemplateView5.as_view(),name="template5"),
     path("all-templates/",AllTemplate.as_view(),name="all-templates"),
 ]
 

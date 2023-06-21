@@ -214,11 +214,11 @@ strong,span{
     }
 
     const opt = {
-      margin: 10,
+      margin: 4,
       filename: 'resume.pdf',
       image: { type: 'jpeg', quality: 0.98 },
       html2canvas: { scale: 2 },
-      jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' },
+      jsPDF: { unit: 'mm', format: 'a3', orientation: 'portrait' },
     };
 
     html2pdf().set(opt).from(clonedBody).save();
@@ -238,7 +238,6 @@ strong,span{
         <p id="name">{{data.first_name}} {{data.last_name}}<br></p>
         <p id="designation">{{data.job_title}}<br><span id="college"></span></p>
         <div id="social-links"><a href="#"><i class="fab fa-facebook-f stroke-transparent"></i></a><a><i class="fab fa-twitter stroke-transparent"></i></a><a><i class="fab fa-linkedin-in stroke-transparent"></i></a><a><i class="fab fa-github stroke-transparent"></i></a></div>
-        <a id="edit-intro" href="#"><i class="fas fa-pen-alt blue"></i>&nbsp;&nbsp;About Me</a>
         <p id="name">{{data.first_name}} {{data.last_name}}<br><br><span id="email">{{data.email}}<br></span></p>
         <p id="education"><strong>{{data.contact_number}}</strong></p>
         <hr width="100%">

@@ -154,7 +154,10 @@ body {
 .resume .resume_right .bold {
   color: #0bb5f4;
 }
-
+.resume_item.resume_about p {
+  max-height: 4rem; 
+  overflow: hidden;
+}
 .resume .resume_right .resume_work ul,
 .resume .resume_right .resume_education ul {
   padding-left: 40px;
@@ -239,6 +242,27 @@ body {
     }
 }
 
+.resume {
+  width: 100%;
+  max-width: 800px; /* Adjust the max-width value as needed */
+  margin: 50px auto;
+  overflow: hidden;
+}
+
+.resume_right {
+  width: calc(100% - 300px); /* Adjust the width calculation to fit the content within the available space */
+  background: #fff;
+  padding: 25px;
+  float: right;
+}
+
+.resume_left {
+  width: 300px;
+  background: #0bb5f4;
+  float: left;
+  padding-bottom: 3000px; /* Adjust the padding-bottom value as needed */
+  margin-bottom: -3000px; /* Adjust the margin-bottom value as needed */
+}
 </style>
 
 
@@ -258,11 +282,11 @@ body {
     }
 
     const opt = {
-      margin: 10,
+      margin: 4,
       filename: 'resume.pdf',
       image: { type: 'jpeg', quality: 0.98 },
-      html2canvas: { scale: 2 },
-      jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' },
+      html2canvas: { scale: 1 },
+      jsPDF: { unit: 'mm', format: 'a3', orientation: 'portrait'  },
     };
 
     html2pdf().set(opt).from(clonedBody).save();
